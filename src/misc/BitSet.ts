@@ -831,7 +831,7 @@ export class BitSet implements Iterable<number>{
 	}
 
 	// Overrides formatting for nodejs assert etc.
-	public [(util.inspect as any).custom](): string {
+	public [Symbol.for("nodejs.util.inspect.custom")](): string {
 		return "BitSet " + this.toString();
 	}
 }
